@@ -14,6 +14,8 @@ sys.path.append(os.path.join(plugindir, "lib"))
 sys.path.append(os.path.join(plugindir, "plugin"))
 
 class TenorBase(object):
+    # Added Line for "your_api_key"
+    API_KEY = "your_api_key"    
 
     def _request(self, endpoint: str, params: dict) -> dict:
         params["key"] = self.API_KEY
@@ -23,7 +25,7 @@ class TenorBase(object):
         return response
 
 class Tenor(TenorBase):
-
+    
     def __init__(self, API_KEY):
         self.API_KEY = API_KEY
 
